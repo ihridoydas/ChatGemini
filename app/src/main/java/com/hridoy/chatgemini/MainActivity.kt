@@ -43,7 +43,6 @@ import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.core.view.WindowCompat
 import androidx.navigation.compose.rememberNavController
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
-import dagger.hilt.android.AndroidEntryPoint
 import com.hridoy.chatgemini.common.DURATION
 import com.hridoy.chatgemini.common.VALUES_X
 import com.hridoy.chatgemini.common.VALUES_Y
@@ -51,6 +50,7 @@ import com.hridoy.chatgemini.common.utils.RootUtil
 import com.hridoy.chatgemini.theme.ChatGeminiTheme
 import com.hridoy.chatgemini.theme.splashScreen.SplashViewModel
 import com.hridoy.chatgemini.ui.MainAnimationNavHost
+import dagger.hilt.android.AndroidEntryPoint
 import timber.log.Timber
 
 @AndroidEntryPoint
