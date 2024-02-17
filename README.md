@@ -1,36 +1,5 @@
-# Base Template Android App
-
-Kickstart your Android app development with this GitHub template repository. Designed by [Hridoy Chandra Das](https://github.com/ihridoydas), it provides essential tools without imposing code-writing opinions.
-
-## Why This Template?
-
-- **Freedom to Choose:** No opinions on code structure or architecture. Developers decide on their own.
-- **Opinionated Tooling:** Configured dependency management, git hooks, code formatting, and static analysis for enhanced development.
-
-Inspired by [AndroidAppTemplate](https://github.com/AdamMc331/AndroidAppTemplate).
-
-## Getting Started
-
-1. Click "Use this template" to create a repository under your account.
-    ```dsl
-   
-   templateName             : "template",
-   templateAppId            : "template.app.id",
-   templateMaterialThemeName: "TemplateTheme",
-   newTemplateName          : "Project", [Enter your project name here]
-   newTemplateAppId         : "domain.yourname.app", [Enter your project package name here]
-   newMaterialThemeName     : "MyMaterialTheme", [Enter your project theme name here]
-   useHiltDependencies      : true,
-   useRoomDependencies      : true,
-   useRetrofitDependencies  : true,
-   usePaparazziDependencies : true,
-   
-   ```
-2. Customize by adjusting [setup.gradle](buildscripts/setup.gradle) and running `./gradlew renameAllModules`.
-
-- Japanese [Readme here](https://github.com/ihridoydas/BaseTemplateAndroidApp/blob/develop/README_jp.md) 🇯🇵.
-- Bangla [Readme here](https://github.com/ihridoydas/BaseTemplateAndroidApp/blob/develop/README_bd.md) 🇧🇩.
-- Hindi [Readme here](https://github.com/ihridoydas/BaseTemplateAndroidApp/blob/develop/README_in.md) 🇮🇳.
+# ChatGemini Android App
+Project demonstration (AI Chat bot with Gemini) Using Android App Architecture (MVVM).
 
 ## What's Included
 

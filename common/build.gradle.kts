@@ -5,7 +5,7 @@ plugins {
 }
 
 android {
-    namespace = "template.common"
+    namespace = "com.hridoy.chatgemini.common"
 
     buildFeatures {
         compose = true

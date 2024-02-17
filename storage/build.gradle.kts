@@ -5,7 +5,7 @@ plugins {
 }
 
 android {
-    namespace = "template.storage"
+    namespace = "com.hridoy.chatgemini.storage"
 
     buildFeatures {
         compose = true

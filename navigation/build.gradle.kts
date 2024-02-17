@@ -7,7 +7,7 @@ plugins {
 }
 
 android {
-    namespace = "template.navigation"
+    namespace = "com.hridoy.chatgemini.navigation"
 
     buildFeatures {
         compose = true

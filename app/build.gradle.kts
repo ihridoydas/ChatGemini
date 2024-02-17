@@ -14,10 +14,10 @@ plugins {
 
 android {
     compileSdk = libs.versions.compileSdk.get().toInt()
-    namespace = "template"
+    namespace = "com.hridoy.chatgemini"
 
     defaultConfig {
-        applicationId = "template.app.id"
+        applicationId = "com.hridoy.chatgemini"
         versionCode = 1
         versionName = "1.0"
     }
