@@ -1,6 +1,13 @@
 # ChatGemini Android App
 Project demonstration (AI Chat bot with Gemini) Using Android App Architecture (MVVM).
 
+🧬 Samples
+------------
+
+|                              |
+|------------------------------|
+| ![app-settings](gemini2.gif) |
+
 ## What's Included
 
 Explore third-party dependencies and documentation in [/documentation](/documentation). Notable inclusions:
