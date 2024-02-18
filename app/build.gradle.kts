@@ -20,6 +20,12 @@ android {
         applicationId = "com.hridoy.chatgemini"
         versionCode = 1
         versionName = "1.0"
+
+        Properties().apply {
+            load(rootProject.file("local.properties").reader())
+        }.also {
+            buildConfigField("String", "API_KEY", "\"${it.getProperty("API_KEY")}\"")
+        }
     }
     //Build Variant
     applicationVariants.configureEach {
@@ -136,13 +142,17 @@ dependencies {
     implementation(libs.androidx.core.splashscreen)
     implementation(libs.androidx.hilt.compose.navigation)
     implementation(libs.androidx.lifecycle.runtime.ktx)
+    implementation (libs.androidx.lifecycle.viewmodel.compose)
+    implementation(libs.androidx.material.icons.extended)
     // Network and Local
     implementation(libs.androidx.room.runtime)
+    implementation(libs.coil.compose)
     implementation(libs.compose.material3)
     implementation(libs.compose.ui)
     implementation(libs.compose.ui.tooling)
     // Storage
     implementation(libs.datastore)
+    implementation(libs.generativeai)
     implementation(libs.hilt.android)
     implementation(libs.ktor.client.core)
     implementation(libs.protobuf.javaLite)

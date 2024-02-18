@@ -22,7 +22,7 @@
 * SOFTWARE.
 *
 */
-package com.hridoy.chatgemini.screens
+package com.hridoy.chatgemini.presentation.screens
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box

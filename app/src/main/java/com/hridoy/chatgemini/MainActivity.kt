@@ -25,11 +25,16 @@
 package com.hridoy.chatgemini
 
 import android.animation.ObjectAnimator
+import android.net.Uri
 import android.os.Bundle
 import android.view.View
 import android.view.animation.OvershootInterpolator
 import androidx.activity.ComponentActivity
+import androidx.activity.SystemBarStyle
 import androidx.activity.compose.setContent
+import androidx.activity.enableEdgeToEdge
+import androidx.activity.result.PickVisualMediaRequest
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.viewModels
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.MaterialTheme
@@ -47,10 +52,12 @@ import com.hridoy.chatgemini.common.DURATION
 import com.hridoy.chatgemini.common.VALUES_X
 import com.hridoy.chatgemini.common.VALUES_Y
 import com.hridoy.chatgemini.common.utils.RootUtil
+import com.hridoy.chatgemini.navigation.MainAnimationNavHost
 import com.hridoy.chatgemini.theme.ChatGeminiTheme
 import com.hridoy.chatgemini.theme.splashScreen.SplashViewModel
-import com.hridoy.chatgemini.ui.MainAnimationNavHost
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.update
 import timber.log.Timber
 
 @AndroidEntryPoint
@@ -61,10 +68,31 @@ class MainActivity : ComponentActivity() {
 
     private val splashViewModel: SplashViewModel by viewModels()
 
+    private val uriState = MutableStateFlow("")
+
+    private val imagePicker =
+        registerForActivityResult<PickVisualMediaRequest, Uri>(
+            ActivityResultContracts.PickVisualMedia(),
+        ) { uri ->
+            uri?.let {
+                uriState.update { uri.toString() }
+            }
+        }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         configureEdgeToEdgeWindow()
+        enableEdgeToEdge(
+            statusBarStyle = SystemBarStyle.light(
+                android.graphics.Color.TRANSPARENT,
+                android.graphics.Color.TRANSPARENT,
+            ),
+            navigationBarStyle = SystemBarStyle.light(
+                android.graphics.Color.TRANSPARENT,
+                android.graphics.Color.TRANSPARENT,
+            ),
+        )
 
         // Check Rooted Device
         if (RootUtil.isDeviceRooted()) {
@@ -114,7 +142,11 @@ class MainActivity : ComponentActivity() {
                     color = MaterialTheme.colorScheme.background,
                 ) {
                     val navController = rememberNavController()
-                    MainAnimationNavHost(navController)
+                    MainAnimationNavHost(
+                        imagePicker = imagePicker,
+                        uriState = uriState,
+                        navController = navController,
+                    )
                 }
             }
         }
