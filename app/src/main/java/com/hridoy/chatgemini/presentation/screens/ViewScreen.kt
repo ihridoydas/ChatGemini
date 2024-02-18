@@ -38,6 +38,7 @@ import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import kotlinx.coroutines.flow.MutableStateFlow
+import timber.log.Timber
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -70,8 +71,8 @@ fun ViewScreen(
             )
         },
         content = {
+            Timber.d("Padding-values", "$it")
             ChatScreen(
-                paddingValues = it,
                 imagePicker = imagePicker,
                 uriState = uriState,
             )
