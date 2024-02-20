@@ -8,6 +8,15 @@ Project demonstration (AI Chat bot with Gemini) Using Android App Architecture (
 |------------------------------|
 | ![app-settings](gemini2.gif) |
 
+## Build Error
+Add your API_KEY from
+https://aistudio.google.com/app/prompts/new_chat
+
+In order to build the project, you need to add the following line to your `local.properties` file:
+```kotlin
+API_KEY=YOUR_API_KEY
+```
+
 ## What's Included
 
 Explore third-party dependencies and documentation in [/documentation](/documentation). Notable inclusions:
