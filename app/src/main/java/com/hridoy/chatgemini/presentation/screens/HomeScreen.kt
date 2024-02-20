@@ -22,7 +22,7 @@
 * SOFTWARE.
 *
 */
-package com.hridoy.chatgemini.screens
+package com.hridoy.chatgemini.presentation.screens
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -58,7 +58,7 @@ fun HomeScreen(navController: NavController) {
             )
             Button(
                 modifier = Modifier
-                    .size(120.dp, 40.dp),
+                    .size(width = 200.dp, height = 40.dp),
                 onClick = {
                     navController.navigate(ScreenDestinations.ViewScreen.route) {
                         popUpTo(ScreenDestinations.HomeScreen.route) {
@@ -71,7 +71,7 @@ fun HomeScreen(navController: NavController) {
                     modifier = Modifier
                         .align(Alignment.CenterVertically)
                         .fillMaxSize().padding(0.dp),
-                    text = "Lets Start!",
+                    text = "Lets Start with Gemini!",
                     color = MaterialTheme.colorScheme.background,
                 )
             }

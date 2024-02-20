@@ -87,7 +87,7 @@ const val DARK_SURFACE_TINT = 0x0A000000
 const val DARK_OUTLINE_VARIANT = 0x1F000000
 const val DARK_SCRIM = 0x33000000
 
-const val SEED = 0xFF3F51B5
+const val SEED = 0xFF00BCD4
 
 val template_theme_light_primary = Color(LIGHT_PRIMARY)
 val template_theme_light_onPrimary = Color(LIGHT_ON_PRIMARY)
