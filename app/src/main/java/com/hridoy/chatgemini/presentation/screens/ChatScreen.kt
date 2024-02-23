@@ -79,7 +79,7 @@ import coil.compose.AsyncImagePainter
 import coil.compose.rememberAsyncImagePainter
 import coil.request.ImageRequest
 import coil.size.Size
-import com.hridoy.chatgemini.presentation.ChatViewModel
+import com.hridoy.chatgemini.presentation.viewmodel.ChatViewModel
 import com.hridoy.chatgemini.presentation.event.ChatUiEvent
 import com.hridoy.chatgemini.theme.seed
 import kotlinx.coroutines.flow.MutableStateFlow

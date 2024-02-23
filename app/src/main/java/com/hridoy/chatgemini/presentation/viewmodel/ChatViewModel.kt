@@ -22,7 +22,7 @@
 * SOFTWARE.
 *
 */
-package com.hridoy.chatgemini.presentation
+package com.hridoy.chatgemini.presentation.viewmodel
 
 import android.graphics.Bitmap
 import androidx.lifecycle.ViewModel
