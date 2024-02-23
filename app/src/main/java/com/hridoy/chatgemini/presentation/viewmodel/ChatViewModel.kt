@@ -43,6 +43,11 @@ class ChatViewModel : ViewModel() {
     private val _chatState = MutableStateFlow(ChatState())
     val chatState = _chatState.asStateFlow()
 
+    /**
+     * Handle chat UI event
+     *
+     * @param event: ChatUiEvent
+     */
     fun onEvent(event: ChatUiEvent) {
         when (event) {
             is ChatUiEvent.SendPrompt -> {
@@ -71,10 +76,17 @@ class ChatViewModel : ViewModel() {
         }
     }
 
+    /**
+     * Add prompt
+     *
+     * @param prompt: String
+     * @param bitmap: Bitmap?
+     */
     private fun addPrompt(
         prompt: String,
         bitmap: Bitmap?,
     ) {
+        // Add prompt to chat list
         _chatState.update {
             it.copy(
                 chatList = it.chatList.toMutableList().apply {
@@ -86,6 +98,12 @@ class ChatViewModel : ViewModel() {
         }
     }
 
+    /**
+     * Get response
+     * テキストのみの応答を取得する場合
+     *
+     * @param prompt: String
+     */
     private fun getResponse(prompt: String) {
         viewModelScope.launch {
             val chat = ChatData.getResponse(prompt)
@@ -101,6 +119,12 @@ class ChatViewModel : ViewModel() {
         }
     }
 
+    /**
+     * Get response with image
+     * 画像付きの応答を取得する場合
+     * @param prompt: String
+     * @param bitmap: Bitmap
+     */
     private fun getResponseWithImage(
         prompt: String,
         bitmap: Bitmap,
@@ -119,7 +143,11 @@ class ChatViewModel : ViewModel() {
         }
     }
 
+    /**
+     * Show indicator
+     */
     private fun showIndicator() {
+        // Show loading indicator
         _chatState.update {
             it.copy(showIndicator = true)
         }

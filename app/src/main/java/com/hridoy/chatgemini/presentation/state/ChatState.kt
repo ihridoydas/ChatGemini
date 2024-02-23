@@ -27,6 +27,14 @@ package com.hridoy.chatgemini.presentation.state
 import android.graphics.Bitmap
 import com.hridoy.chatgemini.domain.model.Chat
 
+/**
+ * Chat state class
+ *
+ * @param chatList: MutableList<Chat>
+ * @param prompt: String
+ * @param bitmap: Bitmap?
+ * @param showIndicator: Boolean
+ */
 data class ChatState(
     val chatList: MutableList<Chat> = mutableListOf(),
     var prompt: String = "",
